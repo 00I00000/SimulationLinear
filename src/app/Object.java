@@ -59,7 +59,7 @@ public class Object {
 	}
 	
 	public double velAfter2(Object obj, double epsilon) {
-		return centerOfMass - epsilon * mass / (obj.mass + mass) * (vel - obj.vel);
+		return centerOfMass - epsilon * obj.mass / (obj.mass + mass) * (vel - obj.vel);
 	}
 	
 	public void velDelta1(Object obj, double epsilon, double deltaTime) {

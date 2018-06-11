@@ -17,8 +17,8 @@ public class Collision extends JFrame {
 		backBuffer = new BufferedImage(Constants.WINDOW_WIDTH, Constants.WINDOW_HEIGHT, BufferedImage.TYPE_INT_RGB);
 	}
 	
-	public static Object obj1 = new Object(0, Constants.WINDOW_HEIGHT / 2, 20, 20, 50, 2000);
-	public static Object obj2 = new Object(Constants.WINDOW_WIDTH / 2, Constants.WINDOW_HEIGHT / 2, 20, 20, 0, 20);
+	public static Object obj1 = new Object(0, Constants.WINDOW_HEIGHT / 2, 20, 20, 50, 20);
+	public static Object obj2 = new Object(Constants.WINDOW_WIDTH / 2, Constants.WINDOW_HEIGHT / 2, 20, 20, 0, 2000);
 	
 	double timeLastFrame = 0;
 	
@@ -61,7 +61,7 @@ public class Collision extends JFrame {
 		test.setVisible(true);
 		double absT = 0;
 		obj1.centerOfMass(obj2);
-		Object.epsilon = 0;
+		Object.epsilon = 1;
 		//(m1 * x1 + m2 * x2) / m1 + m2
 		Object.xCenterOfMass = ((obj1.getMass() * obj1.getX() + obj2.getMass() * obj2.getX()) / (obj1.getMass() + obj2.getMass())) + obj1.getWidth() / 2;
 		System.out.println(obj1.velAfter1(obj2, Object.epsilon));
